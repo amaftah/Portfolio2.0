@@ -35,4 +35,4 @@ This project showcases my work, skills, and experience in a clean and responsive
 
 ### **1. Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/your-portfolio.git
+git clone https://github.com/amaftah/Portfolio2.0.git
