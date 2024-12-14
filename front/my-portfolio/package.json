@@ -21,15 +21,15 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-"devDependencies": {
-  "@testing-library/react": "^13.4.0",
-  "@types/testing-library__react": "^10.2.0",
-
-  "@types/jest": "^29.2.0",
-  "@types/react-dom": "^18.0.9",
-  "web-vitals": "^2.1.4",
-  "typescript": "^4.x.x"
-},
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.0",
+    "@types/react-dom": "^18.0.9",
+    "@types/testing-library__react": "^10.2.0",
+    "typescript": "^4.x.x",
+    "web-vitals": "^2.1.4"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
