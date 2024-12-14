@@ -17,5 +17,11 @@ export const projectsData = [
     imageUrl: 'https://cdn.dribbble.com/users/2446071/screenshots/9890709/media/6c9cb8deabc71b3bb158f6ab7ca653ff.png',
     link: 'https://github.com/amaftah/Portfolio-ReactJs'
   },
+  {
+    title: 'Project Four',
+    description: 'A brief description of Project Four',
+    imageUrl: 'https://via.placeholder.com/140',
+    link: '' 
+  },
  // {Add more projects here
 ];
