@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, Box } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, CardActions, Button, } from '@mui/material';
 
 interface ProjectProps {
   title: string;

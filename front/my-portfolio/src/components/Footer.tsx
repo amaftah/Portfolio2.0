@@ -1,4 +1,4 @@
-import { Container, Typography, Box, IconButton } from '@mui/material';
+import {  Typography, Box, IconButton } from '@mui/material';
 import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
 
 export default function Footer() {
