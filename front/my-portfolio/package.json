@@ -27,6 +27,7 @@
     "@types/jest": "^29.2.0",
     "@types/react-dom": "^18.0.9",
     "@types/testing-library__react": "^10.2.0",
+    "gh-pages": "^6.2.0",
     "typescript": "^4.x.x",
     "web-vitals": "^2.1.4"
   },
