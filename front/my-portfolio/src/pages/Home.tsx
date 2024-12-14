@@ -33,7 +33,7 @@ export default function Home() {
         <Button
           variant="contained"
           color="success"
-          href="Contact"
+          href="contact"
           sx={{ mt: 4, backgroundColor: '#00FF85' }}
         >
           Contact Me
