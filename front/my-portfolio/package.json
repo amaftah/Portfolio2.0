@@ -19,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b MAF"
+    "deploy": "gh-pages -d build -b gh-pages"
+
 
   },
   "devDependencies": {
