@@ -7,7 +7,7 @@ This project showcases my work, skills, and experience in a clean and responsive
 
 ## 📸 **Live Demo**
 
-[🔗 View Live Portfolio](https://your-portfolio-link.vercel.app)
+[🔗 View Live Portfolio](https://amaftah.github.io/Portfolio2.0/#/)
 
 ---
 
