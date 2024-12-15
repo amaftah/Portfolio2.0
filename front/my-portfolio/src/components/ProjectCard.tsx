@@ -1,6 +1,13 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 
-export default function ProjectCard({ title, description, imageUrl, link }) {
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: string;
+}
+
+export default function ProjectCard({ title, description, imageUrl, link }: ProjectCardProps) {
   return (
     <Card
       sx={{
