@@ -2,14 +2,15 @@ import { Container, TextField, Button, Typography, Box, Paper } from '@mui/mater
 
 export default function Contact() {
   return (
-    <Container
+    <Box
       sx={{
-        py: 8,
+        backgroundColor: '#121212', // Dark background like Home
+        color: '#fff', // White text
+        minHeight: '100vh', // Full viewport height
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#f4f4f4', // Light background for the page
+        py: 8,
       }}
     >
       <Paper
@@ -19,8 +20,9 @@ export default function Contact() {
           borderRadius: 4,
           maxWidth: 700,
           width: '100%',
-          backgroundColor: '#ffffff',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+          backgroundColor: '#1e1e1e', // Match Home's card background
+          color: '#fff',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
         }}
       >
         {/* Header */}
@@ -30,7 +32,7 @@ export default function Contact() {
           textAlign="center"
           sx={{
             fontWeight: 'bold',
-            color: '#2196F3',
+            color: '#00FF85', // Accent color
             textTransform: 'uppercase',
             mb: 3,
           }}
@@ -44,10 +46,10 @@ export default function Contact() {
           textAlign="center"
           sx={{
             mb: 4,
-            color: '#555',
+            color: '#ccc', // Light grey for secondary text
           }}
         >
-          We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          Feel free to reach out. I'll respond as soon as possible!
         </Typography>
 
         {/* Form */}
@@ -66,7 +68,14 @@ export default function Contact() {
             fullWidth
             required
             InputProps={{
-              sx: { borderRadius: 2 },
+              sx: {
+                borderRadius: 2,
+                backgroundColor: '#2c2c2c', // Darker input field
+                color: '#fff',
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#aaa' }, // Label color
             }}
           />
 
@@ -78,7 +87,14 @@ export default function Contact() {
             fullWidth
             required
             InputProps={{
-              sx: { borderRadius: 2 },
+              sx: {
+                borderRadius: 2,
+                backgroundColor: '#2c2c2c',
+                color: '#fff',
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#aaa' },
             }}
           />
 
@@ -89,7 +105,14 @@ export default function Contact() {
             variant="outlined"
             fullWidth
             InputProps={{
-              sx: { borderRadius: 2 },
+              sx: {
+                borderRadius: 2,
+                backgroundColor: '#2c2c2c',
+                color: '#fff',
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#aaa' },
             }}
           />
 
@@ -102,7 +125,14 @@ export default function Contact() {
             fullWidth
             required
             InputProps={{
-              sx: { borderRadius: 2 },
+              sx: {
+                borderRadius: 2,
+                backgroundColor: '#2c2c2c',
+                color: '#fff',
+              },
+            }}
+            InputLabelProps={{
+              sx: { color: '#aaa' },
             }}
           />
 
@@ -113,12 +143,12 @@ export default function Contact() {
             fullWidth
             sx={{
               mt: 2,
-              backgroundImage: 'linear-gradient(to right, #1976D2, #64B5F6)',
-              color: '#fff',
+              backgroundImage: 'linear-gradient(to right, #00FF85, #00E676)',
+              color: '#121212',
               fontSize: '1rem',
               borderRadius: 2,
               '&:hover': {
-                backgroundImage: 'linear-gradient(to right, #1565C0, #42A5F5)',
+                backgroundImage: 'linear-gradient(to right, #00E676, #00C853)',
               },
             }}
           >
@@ -126,6 +156,6 @@ export default function Contact() {
           </Button>
         </Box>
       </Paper>
-    </Container>
+    </Box>
   );
 }

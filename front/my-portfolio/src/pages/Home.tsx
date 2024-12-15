@@ -1,7 +1,10 @@
 import { Container, Typography, Box, Button, Grid, Card, CardContent } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import pic from '../data/pic.png';
 
 export default function Home() {
+  const navigate = useNavigate(); // React Router's navigation hook
+
   return (
     <Box sx={{ backgroundColor: '#121212', color: '#fff', minHeight: '100vh', py: 8 }}>
       {/* Header Section */}
@@ -30,10 +33,11 @@ export default function Home() {
           Data-driven professional with expertise in technical support, IT systems, and web development.
         </Typography>
 
+        {/* Fixed "Contact Me" Button */}
         <Button
           variant="contained"
           color="success"
-          href="contact"
+          onClick={() => navigate('/contact')} // Navigate to Contact page
           sx={{ mt: 4, backgroundColor: '#00FF85' }}
         >
           Contact Me
@@ -50,15 +54,12 @@ export default function Home() {
       <Container sx={{ py: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
-           
-
-              <Box
-                component="img"
-                src={pic}
-                alt="Profile Picture"
-                sx={{ width: '100%', borderRadius: 2 }}
-              />
-
+            <Box
+              component="img"
+              src={pic}
+              alt="Profile Picture"
+              sx={{ width: '100%', borderRadius: 2 }}
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom sx={{ color: '#00FF85' }}>
@@ -73,10 +74,11 @@ export default function Home() {
               With a strong background in <strong>React TS</strong>, <strong>Material-UI</strong>, and <strong>PowerBI</strong>, I specialize in creating user-centric applications and delivering actionable insights.
             </Typography>
 
+            {/* Fixed "Projects" Button */}
             <Button
               variant="contained"
               color="success"
-              href="Projects"
+              onClick={() => navigate('/projects')} // Navigate to Projects page
               sx={{ backgroundColor: '#00FF85' }}
             >
               Projects

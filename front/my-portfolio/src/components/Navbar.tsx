@@ -16,7 +16,6 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
         </Typography>
         <Button color="inherit" component={Link} to="/">Home</Button>
         <Button color="inherit" component={Link} to="/projects">Projects</Button>
-        <Button color="inherit" component={Link} to="/about">About</Button>
         <Button color="inherit" component={Link} to="/contact">Contact</Button>
         <IconButton color="inherit" onClick={toggleDarkMode} sx={{ ml: 2 }}>
           {darkMode ? <Brightness7 /> : <Brightness4 />}

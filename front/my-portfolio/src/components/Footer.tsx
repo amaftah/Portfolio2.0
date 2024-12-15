@@ -1,4 +1,4 @@
-import {  Typography, Box, IconButton } from '@mui/material';
+import { Typography, Box, IconButton } from '@mui/material';
 import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
 
 export default function Footer() {
@@ -6,27 +6,25 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        width: '100%', // Full width of the viewport
-        backgroundColor: '#333', // Dark background color
-        color: '#fff', // White text color
+        width: '100%', // Full width
+        backgroundColor: '#121212', // Dark background
+        color: '#fff', // White text
         textAlign: 'center', // Center-align text and icons
-        py: 2, // Padding on top and bottom
-        position: 'relative', // Adjust to 'fixed' or 'absolute' if needed
-        bottom: 0, // Position footer at the bottom
+        py: 2, // Padding for spacing
+        position: 'fixed', // Fix footer at the bottom
+        bottom: 0, // Align footer to bottom of the viewport
+        left: 0, // Ensure alignment starts from the left edge
       }}
     >
       <Typography variant="body2">
         &copy; 2024 Maftah. All rights reserved.
       </Typography>
       <Box mt={2}>
-        <IconButton href="https://github.com/yourusername" target="_blank" sx={{ color: '#fff' }}>
+        <IconButton href="https://github.com/amaftah" target="_blank" sx={{ color: '#fff' }}>
           <GitHub />
         </IconButton>
-        <IconButton href="https://linkedin.com/in/yourusername" target="_blank" sx={{ color: '#fff' }}>
+        <IconButton href="https://www.linkedin.com/in/abderrahmane-maftah-0904961a6/" target="_blank" sx={{ color: '#fff' }}>
           <LinkedIn />
-        </IconButton>
-        <IconButton href="https://twitter.com/yourusername" target="_blank" sx={{ color: '#fff' }}>
-          <Twitter />
         </IconButton>
       </Box>
     </Box>
