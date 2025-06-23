@@ -1,27 +1,67 @@
 import { createTheme } from '@mui/material/styles';
 
+const commonSettings = {
+  typography: {
+    fontFamily: ['"Segoe UI"', 'Roboto', 'Arial', 'sans-serif'].join(','),
+    h2: {
+      fontSize: '2.8rem',
+      fontWeight: 700,
+    },
+    h4: {
+      fontSize: '2rem',
+      fontWeight: 600,
+    },
+    h5: {
+      fontSize: '1.5rem',
+      fontWeight: 500,
+    },
+    body1: {
+      fontSize: '1.1rem',
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+};
+
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: '#1976d2' },
-    secondary: { main: '#ff4081' },
-    background: { default: '#f4f4f4', paper: '#ffffff' },
-    text: { primary: '#000000', secondary: '#555555' },
+    background: {
+      default: '#f5f7fa',
+      paper: '#ffffff',
+    },
+    primary: {
+      main: '#0052cc',
+    },
+    secondary: {
+      main: '#4dabf5',
+    },
+    text: {
+      primary: '#1a1a1a',
+      secondary: '#4f4f4f',
+    },
   },
-  typography: {
-    fontFamily: 'Roboto, sans-serif',
-  },
+  ...commonSettings,
 });
 
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
-    primary: { main: '#90caf9' },
-    secondary: { main: '#f48fb1' },
-    background: { default: '#121212', paper: '#1e1e1e' },
-    text: { primary: '#ffffff', secondary: '#bbbbbb' },
+    background: {
+      default: '#1e1e2f',
+      paper: '#2a2a3c',
+    },
+    primary: {
+      main: '#90caf9',
+    },
+    secondary: {
+      main: '#f48fb1',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#bdbdbd',
+    },
   },
-  typography: {
-    fontFamily: 'Roboto, sans-serif',
-  },
+  ...commonSettings,
 });

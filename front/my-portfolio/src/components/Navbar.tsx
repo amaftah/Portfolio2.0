@@ -1,26 +1,63 @@
-import { AppBar, Toolbar, Typography, Button, IconButton, Switch } from '@mui/material';
+import { AppBar, Toolbar, Typography, Switch, Box, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Brightness4, Brightness7 } from '@mui/icons-material';
 
-interface NavbarProps {
+type Props = {
   darkMode: boolean;
-  toggleDarkMode: () => void;
-}
+  setDarkMode: (value: boolean) => void;
+};
 
-export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
+export default function Navbar({ darkMode, setDarkMode }: Props) {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#333' }}>
-      <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Maftah's Portfolio 
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: '#1a1a2e',
+        color: '#f5f5f5',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
+        zIndex: 1301,
+      }}
+    >
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Typography
+          variant="h6"
+          component={Link}
+          to="/"
+          sx={{ textDecoration: 'none', color: 'inherit', fontWeight: 'bold' }}
+        >
+          Abderrahmane Maftah
         </Typography>
-        <Button color="inherit" component={Link} to="/">Home</Button>
-        <Button color="inherit" component={Link} to="/projects">Projects</Button>
-        <Button color="inherit" component={Link} to="/contact">Contact</Button>
-        <IconButton color="inherit" onClick={toggleDarkMode} sx={{ ml: 2 }}>
-          {darkMode ? <Brightness7 /> : <Brightness4 />}
-        </IconButton>
-        <Switch checked={darkMode} onChange={toggleDarkMode} />
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            {['/', '/projects', '/contact'].map((route) => (
+              <Typography
+                key={route}
+                component={Link}
+                to={route}
+                sx={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  px: 1,
+                  py: 0.5,
+                  borderRadius: 2,
+                  transition: 'all 0.2s',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    textDecoration: 'none',
+                  },
+                }}
+              >
+                {route === '/' ? 'Home' : route.slice(1).charAt(0).toUpperCase() + route.slice(2)}
+              </Typography>
+            ))}
+          </Box>
+
+          <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
+            {darkMode ? <Brightness7 /> : <Brightness4 />}
+          </IconButton>
+          <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+        </Box>
       </Toolbar>
     </AppBar>
   );

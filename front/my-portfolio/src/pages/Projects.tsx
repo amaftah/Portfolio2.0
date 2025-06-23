@@ -1,59 +1,107 @@
-import { Grid, Container, Typography, Box } from '@mui/material';
-import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../data/projectsData';
-import Footer from '../components/Footer';
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  CardActions,
+  Button,
+  Chip,
+  Box,
+  Paper,
+} from '@mui/material';
+
+const skills = [
+  'React',
+  'TypeScript',
+  'Material-UI',
+  'Figma',
+  'Git',
+  'Excel',
+  'Power BI',
+  'ServiceNow',
+];
+
+const projects = [
+  {
+    title: 'Locker Management App',
+    description:
+      'Developed a responsive React/TypeScript front-end for managing lockers. Designed with Figma and implemented based on usability testing.',
+    imageUrl: '/assets/locker-app.jpg',
+    link: '#',
+  },
+  {
+    title: 'Customer Support Automation',
+    description:
+      'Created a script-based automation system to reduce handling time for recurring smart home technical issues at Telus.',
+    imageUrl: '/assets/support-automation.jpg',
+    link: '#',
+  },
+  {
+    title: 'KPI Dashboard with Excel & Google Sheets',
+    description:
+      'Built dashboards using Excel/Google Sheets & scripting to track quality, efficiency, and team performance across months.',
+    imageUrl: '/assets/kpi-dashboard.jpg',
+    link: '#',
+  },
+];
 
 export default function Projects() {
   return (
-    <Box
+    <Container
+      maxWidth="lg"
       sx={{
-        backgroundColor: '#121212', // Dark background like Home
-        color: '#fff', // White text
-        minHeight: '100vh', // Full viewport height
-        display: 'flex',
-        flexDirection: 'column', // Stack content vertically
+        py: 10,
+        color: 'white',
       }}
     >
-      {/* Main Content */}
-      <Box component="main" sx={{ flex: 1, py: 8 }}>
-        <Container maxWidth="lg">
-          {/* Page Header */}
-          <Box textAlign="center" mb={4}>
-            <Typography
-              variant="h3"
-              fontWeight="bold"
-              gutterBottom
-              sx={{ color: '#00FF85' }} // Accent color
-            >
-              My Projects
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              sx={{ color: '#ccc' }} // Light grey for secondary text
-            >
-              A selection of projects showcasing my development and design expertise.
-            </Typography>
-          </Box>
+      <Typography variant="h3" fontWeight="bold" gutterBottom textAlign="center">
+        🚀 Projects
+      </Typography>
 
-          {/* Projects Grid */}
-          <Grid container spacing={4}>
-            {projectsData.map((project, index) => (
-              <Grid item key={index} xs={12} sm={6} md={4}>
-                <ProjectCard
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  link={project.link}
-                />
-              </Grid>
-            ))}
+      <Grid container spacing={4} sx={{ mt: 2 }}>
+        {projects.map((project, idx) => (
+          <Grid item xs={12} md={4} key={idx}>
+            <Card sx={{ backgroundColor: '#2c2c3c', color: 'white', borderRadius: 3 }}>
+              <CardMedia component="img" height="180" image={project.imageUrl} alt={project.title} />
+              <CardContent>
+                <Typography variant="h6" fontWeight="bold">
+                  {project.title}
+                </Typography>
+                <Typography variant="body2" color="#ccc">
+                  {project.description}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  size="small"
+                  href={project.link}
+                  target="_blank"
+                  sx={{ color: 'lightblue' }}
+                >
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
-        </Container>
-      </Box>
+        ))}
+      </Grid>
 
-      {/* Footer */}
-      <Footer />
-    </Box>
+      <Box mt={10}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
+          🧠 Skills & Technologies
+        </Typography>
+        <Paper elevation={2} sx={{ p: 3, backgroundColor: '#2c2c3c', textAlign: 'center' }}>
+          {skills.map((skill, i) => (
+            <Chip
+              key={i}
+              label={skill}
+              sx={{ m: 1, backgroundColor: '#3c3c50', color: 'white' }}
+            />
+          ))}
+        </Paper>
+      </Box>
+    </Container>
   );
 }

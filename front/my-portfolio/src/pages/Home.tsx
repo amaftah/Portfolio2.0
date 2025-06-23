@@ -1,126 +1,142 @@
-import { Container, Typography, Box, Button, Grid, Card, CardContent } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import pic from '../data/pic.png';
+// home_page_cv_based.tsx
+import { Container, Typography, Box, Button, Paper, Grid, Chip, Avatar, Divider, Stack } from '@mui/material';
+import { Email, LocationOn, Phone, School, Work } from '@mui/icons-material';
 
 export default function Home() {
-  const navigate = useNavigate(); // React Router's navigation hook
-
   return (
-    <Box sx={{ backgroundColor: '#121212', color: '#fff', minHeight: '100vh', py: 8 }}>
-      {/* Header Section */}
-      <Container
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 8,
+        py: 10,
+        px: 4,
+        background: 'linear-gradient(135deg, #1b1b2f 0%, #2c2c54 100%)',
+        borderRadius: 4,
+        boxShadow: 6,
+        color: 'white',
+      }}
+    >
+      {/* Hero Section */}
+      <Box
         sx={{
           textAlign: 'center',
-          py: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <Typography variant="h3" gutterBottom>
-          Hi There!
+        <Avatar
+          src="/assets/profile.jpg"
+          alt="Abderrahmane Maftah"
+          sx={{ width: 160, height: 160, mb: 3, boxShadow: 4, border: '4px solid #fff' }}
+        />
+        <Typography variant="h2" fontWeight="bold" gutterBottom color="white">
+          Abderrahmane Maftah
         </Typography>
-
-        <Typography
-          variant="h2"
-          gutterBottom
-          sx={{ fontWeight: 'bold', color: '#00FF85' }}
-        >
-          I am Abderrahmane Maftah
+        <Typography variant="h5" sx={{ color: '#bbbbdd' }} gutterBottom>
+          IT Support Specialist • Front-End Developer • Problem Solver
         </Typography>
-
-        <Typography variant="h5" paragraph>
-          Data-driven professional with expertise in technical support, IT systems, and web development.
+        <Typography variant="body1" maxWidth="md" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+          I bridge the gap between users and technology. From building elegant user interfaces to delivering
+          precise technical support, I strive to make tech simple, functional, and impactful.
         </Typography>
-
-        {/* Fixed "Contact Me" Button */}
         <Button
           variant="contained"
-          color="success"
-          onClick={() => navigate('/contact')} // Navigate to Contact page
-          sx={{ mt: 4, backgroundColor: '#00FF85' }}
+          size="large"
+          color="primary"
+          href="/projects"
+          sx={{ mt: 4, borderRadius: 8, px: 5, py: 1.5, fontSize: '1.1rem' }}
         >
-          Contact Me
+          Explore My Work
         </Button>
+      </Box>
 
-        <Box sx={{ mt: 4, display: 'flex', gap: 2 }}>
-          <Typography>Email: abderrahmanemaftah@outlook.com</Typography>
-          <Typography>Phone: +212613375023</Typography>
-          <Typography>Location: Casablanca, Morocco</Typography>
-        </Box>
-      </Container>
+      {/* Contact Summary */}
+      <Stack direction="row" spacing={2} justifyContent="center" useFlexGap flexWrap="wrap">
+        <Chip icon={<LocationOn />} label="Casablanca, Morocco" variant="filled" color="secondary" />
+        <Chip icon={<Email />} label="abderrahmanemaftah@outlook.com" variant="filled" color="secondary" />
+        <Chip icon={<Phone />} label="+212 613 375 023" variant="filled" color="secondary" />
+      </Stack>
 
-      {/* About Section */}
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box
-              component="img"
-              src={pic}
-              alt="Profile Picture"
-              sx={{ width: '100%', borderRadius: 2 }}
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Typography variant="h4" gutterBottom sx={{ color: '#00FF85' }}>
-              Who am I?
-            </Typography>
-
-            <Typography variant="h6" gutterBottom>
-              I&apos;m Abderrahmane Maftah, a Technical Support Specialist passionate about data analysis, web development, and UI/UX design.
-            </Typography>
-
-            <Typography variant="body1" paragraph>
-              With a strong background in <strong>React TS</strong>, <strong>Material-UI</strong>, and <strong>PowerBI</strong>, I specialize in creating user-centric applications and delivering actionable insights.
-            </Typography>
-
-            {/* Fixed "Projects" Button */}
-            <Button
-              variant="contained"
-              color="success"
-              onClick={() => navigate('/projects')} // Navigate to Projects page
-              sx={{ backgroundColor: '#00FF85' }}
-            >
-              Projects
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* Services Section */}
-      <Container sx={{ py: 8 }}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ textAlign: 'center', fontWeight: 'bold', color: '#00FF85' }}
-        >
-          My Services
+      {/* Summary Section */}
+      <Paper elevation={3} sx={{ p: 5, borderRadius: 4, background: '#2c2c3c', color: 'white' }}>
+        <Typography variant="h5" fontWeight="bold" gutterBottom>
+          👋 About Me
         </Typography>
+        <Typography variant="body1" lineHeight={1.8}>
+          I’m a proactive and adaptable IT support specialist with hands-on experience in technical support, network troubleshooting,
+          and front-end development. I’m skilled in Windows/Linux systems, React, Material-UI, Docker, and incident management platforms
+          like Jira and ServiceNow. Whether building sleek interfaces or resolving complex issues, I focus on clarity, efficiency,
+          and creating delightful user experiences.
+        </Typography>
+      </Paper>
 
-        <Grid container spacing={4} sx={{ mt: 4 }}>
+      {/* Education Section */}
+      <Box sx={{ width: '100%' }}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
+          🎓 Education
+        </Typography>
+        <Grid container spacing={3} justifyContent="center">
           {[
-            { title: 'Data Analysis', description: 'Providing actionable insights using PowerBI and advanced Excel techniques.' },
-            { title: 'Web Development', description: 'Building scalable and modern web applications with React TS and Material-UI.' },
-            { title: 'UI/UX Design', description: 'Creating user-centered prototypes and improving user experiences with Figma.' },
-            { title: 'Technical Support', description: 'Delivering fast issue resolution and enhancing customer satisfaction.' },
-            { title: 'IT Systems', description: 'Streamlining configurations and managing IT projects effectively.' },
-            { title: 'Branding & Marketing', description: 'Helping businesses establish their identity and improve reach.' },
-          ].map((service, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card sx={{ backgroundColor: '#1e1e1e', color: '#fff', borderRadius: 2 }}>
-                <CardContent>
-                  <Typography variant="h6" gutterBottom>
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body2">
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </Card>
+            {
+              title: 'Full-Stack Web Development – Simplon Socolide',
+              year: '2022 – 2023',
+            },
+            {
+              title: 'Common Core in Software Engineering – 1337 UM6P',
+              year: '2021',
+            },
+            {
+              title: 'Baccalauréat – Physical Sciences',
+              year: '2018',
+            },
+          ].map((edu, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Paper elevation={2} sx={{ p: 3, borderRadius: 3, height: '100%', backgroundColor: '#2c2c3c', color: 'white' }}>
+                <Typography fontWeight="bold">{edu.title}</Typography>
+                <Typography variant="body2" sx={{ color: '#bbbbbb' }}>{edu.year}</Typography>
+              </Paper>
             </Grid>
           ))}
         </Grid>
-      </Container>
-    </Box>
+      </Box>
+
+      {/* Experience Section */}
+      <Box sx={{ width: '100%' }}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
+          💼 Experience
+        </Typography>
+        <Grid container spacing={3} justifyContent="center">
+          {[
+            {
+              title: 'E-chat Care Agent – Cnexia ALT',
+              year: 'Mar 2024 – Present',
+              desc: 'Assist Bell Canada customers via live chat, troubleshooting internet, billing, and setup issues through Citrix-based tools like CSR and ITL.',
+            },
+            {
+              title: 'Technical Support Specialist – Telus Digital',
+              year: 'Jun 2023 – Nov 2023',
+              desc: 'Provided Tier-1 support for smart home security devices, performed diagnostics, network setup, and collaborated with escalation teams.',
+            },
+            {
+              title: 'Front-End Developer Intern – TE Connectivity',
+              year: 'Jun 2023 – Nov 2023',
+              desc: 'Built and deployed a React TypeScript front-end for managing lockers. Conducted UI/UX testing with Figma and implemented user feedback.',
+            },
+          ].map((exp, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Paper elevation={2} sx={{ p: 3, borderRadius: 3, height: '100%', backgroundColor: '#2c2c3c', color: 'white' }}>
+                <Typography fontWeight="bold">{exp.title}</Typography>
+                <Typography variant="body2" sx={{ color: '#bbbbbb' }}>{exp.year}</Typography>
+                <Typography variant="body2" mt={1}>{exp.desc}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Container>
   );
 }
